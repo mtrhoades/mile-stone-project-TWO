@@ -1,0 +1,28 @@
+{
+  "name": "mile-stone-project-two",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtrhoades/mile-stone-project-TWO.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtrhoades/mile-stone-project-TWO/issues"
+  },
+  "homepage": "https://github.com/mtrhoades/mile-stone-project-TWO#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-react-views": "^0.11.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.3.3",
+    "react": "^18.1.0"
+  }
+}
