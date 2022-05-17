@@ -1,0 +1,9 @@
+body {
+    background-color: lightblue;
+    margin: 2rem;
+}
+
+li {
+    list-style-type: none;
+    padding-bottom: 1rem;
+}
