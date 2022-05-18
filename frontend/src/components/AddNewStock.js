@@ -80,3 +80,5 @@ const AddNewStock = () => {
 
 
 export default AddNewStock;
+
+//testing the push for modal changes
