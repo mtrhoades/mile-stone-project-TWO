@@ -10,7 +10,7 @@ const addnew = () => {
         <Def>
             <h2>Add New Stock</h2>
 
-            <form style={{display: 'flex', flexDirection: 'column'}}>
+            <form style={{display: 'flex', flexDirection: 'column', width: '25vw'}}>
                 <label style={{paddingRight: '1rem'}}
                     htmlFor="symbol"
                     >Ticker Symbol
@@ -33,22 +33,20 @@ const addnew = () => {
                     required
                 >
                 </input>
-                <label style={{paddingRight: '1rem'}}
+                <label
                     htmlFor="price"
                     >Stock Price
                 </label>
-                <input
-                    type="text"
+                <input 
+                    type="number"
                     name="price"
                     id="price"
                     required
                 >
                 </input>
-                <input
-                    type="submit"
-                    value="Add Stock"
-                >
-                </input>
+                <br></br>
+                <a href="">
+                    <button className="btn btn-success">Add Stock</button></a>
             </form>
 
         </Def>

@@ -20,7 +20,7 @@ stocks.get('/', (req, res) => {
 });
 
 
-    // ADD NEW STOCK ROUTE
+    // ADD NEW STOCK (page) ROUTE
 stocks.get('/addnew', (req, res) => {
     try {
         res.render('stocks/addnew')
@@ -30,8 +30,7 @@ stocks.get('/addnew', (req, res) => {
 });
 
 
-
-    // CREATE ROUTE
+    // CREATE ROUTE (new stock)
 
 
     // UPDATE ROUTE
