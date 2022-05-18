@@ -42,50 +42,27 @@ const AddNewStock = () => {
         <label for="formGroupExampleInput">Example label</label>
         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
         </div>
-        <div class="form-group">
+        <div class="form-group"></div>
         <label for="formGroupExampleInput2">Another label</label>
         <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
         </div>
         </form>  */}
           <form>
-            <div class="form-group">
-            <label for="formGroupExampleInput">Ticker Symbol</label>
-              <input
-                class="form-control"
-                type="text"
-                placeholder="Ticker Symbol"
-                name="symbol"
-                id="symbol"
-                required
-              >
-              </input>
-            </div>
-            <div class="form-group">
-            <label for="formGroupExampleInput">Stock Name</label>
-              <input
-                class="form-control"
-                type="text"
-                placeholder="Stock Name"
-                name="name"
-                id="name"
-                required
-              >
-              </input>
-            </div>
-            <div class="form-group">
-            <label for="formGroupExampleInput">Stock Price</label>
-              <input
-                class="form-control"
-                type="text"
-                placeholder="Stock Price"
-                name="price"
-                id="price"
-                required
-              >
-              </input>
-            </div>
+  <div class="form-group row">
+    <label for="Symbol" class="col-sm-2 col-form-label" >Symbol</label>
+    
+    <input type="text" class="form-control form-control-sm" id="Symbol" placeholder="Symbol"></input>
+  </div>
+  <div class="form-group row">
+    <label for="Name" class="col-sm-2 col-form-label" >Name</label>
+    <input type="text" class="form-control form-control-sm" id="Name" placeholder="Name"></input>
+  </div>
 
-          </form>
+  <div class="form-group row">
+    <label for="Price" class="col-sm-2 col-form-label" >Price</label>
+    <input type="text" class="form-control form-control-sm" id="Price" placeholder="Price"></input>
+  </div>  
+</form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
