@@ -15,13 +15,22 @@ stocks.get('/', (req, res) => {
             title: 'Stocks'
         });
     } catch (err) {
-        res.status(404).send('404 page not found!');
+        res.status(404).render('error404');
     }
 });
 
 
-    // CREATE ROUTE
+    // ADD NEW STOCK (page) ROUTE
+stocks.get('/addnew', (req, res) => {
+    try {
+        res.render('stocks/addnew')
+    } catch (err) {
+        res.status(404).render('error404')
+    }
+});
 
+
+    // CREATE ROUTE (new stock)
 
 
     // UPDATE ROUTE
