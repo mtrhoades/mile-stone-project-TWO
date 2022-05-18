@@ -15,7 +15,9 @@ const index = () => {
                         return (
                             <li key={index}>
                                 <a href={`/stocks/${index}`}>
+                                <div class="text-center">
                                     {stocks.name}, {stocks.symbol}, {stocks.price}
+                                    </div>
                                 </a>
                             </li>
                         )
