@@ -8,26 +8,41 @@ const stocks = express.Router();
 // ROUTES:
 
     // INDEX (READ) ROUTE
-stocks.get('/', (req, res) => {
+stocks.get('/', async (req, res) => {
     try {
-        res.render('stocks/index', {
-            stocks: db,
-            title: 'Stocks'
-        });
+        res.json([
+            {
+             name: "Apple",
+             symbol: 'AAPL',
+             price: '$240.45'
+            },
+            {
+             name: "Amazon",
+             symbol: 'AMZN',
+             price: '$2,231.65'
+            },
+            {
+             name: "Twitter",
+             symbol: 'TWTR',
+             price: '$41.97'
+            },
+            {
+             name: "Microsoft",
+             symbol: 'MSFT',
+             price: '$352.85'
+            }
+        ])
+
+        // use as template for when connecting to mongo:
+            // employee.get("/", async (req, res) => {
+            //     const myEmployees = await Employee.find();
+            //     res.json(myEmployees);
+            //     }); 
     } catch (err) {
         res.status(404).render('error404');
     }
 });
 
-
-    // ADD NEW STOCK (page) ROUTE
-stocks.get('/addnew', (req, res) => {
-    try {
-        res.render('stocks/addnew')
-    } catch (err) {
-        res.status(404).render('error404')
-    }
-});
 
 
     // CREATE ROUTE (new stock)

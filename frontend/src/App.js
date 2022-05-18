@@ -1,7 +1,6 @@
 // IMPORTS
 import './App.css';
 import StockList from './components/StockList';
-import AddNewStock from './components/AddNewStock';
 
 
 // FUNCTIONAL COMPONENT

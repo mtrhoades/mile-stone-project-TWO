@@ -2,7 +2,6 @@
 const express = require('express');
 
 
-
 // CONFIGURATION
 require('dotenv').config();
 const PORT = process.env.PORT;
@@ -23,7 +22,7 @@ app.engine('jsx', require('express-react-views').createEngine()); // importing '
 
 // ROOT ROUTE (home page route)
 app.get('/', (req, res) => {
-    res.render('home')
+    res.send('Welcome to my full-stack stocks portfolio app')
 });
 
 

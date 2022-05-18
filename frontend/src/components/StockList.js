@@ -2,26 +2,43 @@
 import React, { useState, useEffect } from 'react';
 
 
-
 // FUNCTIONAL COMPONENT
 const StockList = () => {
     // VANILLA JS SECTION
-    const [stocks, setStocks] = useState([]);
+    // useState section:
+    const [stocks, setStocks] = useState([
+        {
+         name: "Apple",
+         symbol: 'AAPL',
+         price: '$240.45'
+        },
+        {
+         name: "Amazon",
+         symbol: 'AMZN',
+         price: '$2,231.65'
+        },
+        {
+         name: "Twitter",
+         symbol: 'TWTR',
+         price: '$41.97'
+        },
+        {
+         name: "Microsoft",
+         symbol: 'MSFT',
+         price: '$352.85'
+        }
+    ]);
 
-
-
-   // useState section:
-   
 
 
    // helper function section:
    // fetch request:
    const getStocks = async () => {
        try {
-           const response = await fetch('http://localhost:3006/stocks');
-           const jsonData = await response.json();
-           
-           setStocks(jsonData);
+         const response = await fetch('http://localhost:3006/stocks');
+         const jsonData = await response.json();
+
+            setStocks(jsonData);
            
         } catch (err) {
             console.error(err.message);
@@ -49,9 +66,9 @@ const StockList = () => {
             <tbody>
                 {stocks.map(stock => (
                     <tr>
-                        <td>{stocks.symbol}</td>
-                        <td>{stocks.name}</td>
-                        <td>{stocks.price}</td>
+                        <td>{stock.symbol}</td>
+                        <td>{stock.name}</td>
+                        <td>{stock.price}</td>
                     </tr>
                 ))}
             </tbody>
