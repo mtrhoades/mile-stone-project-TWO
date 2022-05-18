@@ -1,6 +1,9 @@
 // IMPORTS
 import './App.css';
 import StockList from './components/StockList';
+import AddNewStock from './components/AddNewStock';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 // FUNCTIONAL COMPONENT
@@ -12,6 +15,8 @@ function App() {
   // JSX SECTION
   return (
     <div className="App">
+
+      <AddNewStock />
 
       <StockList />
 
