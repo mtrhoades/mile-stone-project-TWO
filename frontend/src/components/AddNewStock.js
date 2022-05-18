@@ -37,23 +37,13 @@ const AddNewStock = () => {
           <Modal.Title>Add New Stock</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        {/* <form>
-        <div class="form-group">
-        <label for="formGroupExampleInput">Example label</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-        </div>
-        <div class="form-group">
-        <label for="formGroupExampleInput2">Another label</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-        </div>
-        </form>  */}
           <form>
             <div class="form-group">
             <label for="formGroupExampleInput">Ticker Symbol</label>
               <input
                 class="form-control"
                 type="text"
-                placeholder="Ticker Symbol"
+                placeholder="Type Ticker Symbol Here"
                 name="symbol"
                 id="symbol"
                 required
@@ -65,7 +55,7 @@ const AddNewStock = () => {
               <input
                 class="form-control"
                 type="text"
-                placeholder="Stock Name"
+                placeholder="Type Stock Name Here"
                 name="name"
                 id="name"
                 required
@@ -77,14 +67,13 @@ const AddNewStock = () => {
               <input
                 class="form-control"
                 type="text"
-                placeholder="Stock Price"
+                placeholder="Type Stock Price Here"
                 name="price"
                 id="price"
                 required
               >
               </input>
             </div>
-
           </form>
         </Modal.Body>
         <Modal.Footer>
