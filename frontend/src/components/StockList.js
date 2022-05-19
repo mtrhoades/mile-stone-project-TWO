@@ -53,22 +53,27 @@ const StockList = () => {
 
     // JSX SECTION
   return (
-    <div>
-        <h2>StockList</h2>
-        <table>
+    <div >
+        <h2>Stock List</h2>
+        <table class=" center table table-sm table-striped table-dark text-center">
             <thead>
                 <tr>
                     <th scope="col">Symbol</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Price</th>
+                    <th scope="col">Price</th>  
+                    <th scope="col">Options</th>  
+
                 </tr>
             </thead>
-            <tbody>
+            <tbody >
                 {stocks.map(stock => (
                     <tr>
                         <td>{stock.symbol}</td>
                         <td>{stock.name}</td>
                         <td>{stock.price}</td>
+                        <td> <button type="button" class="btn btn-primary btn-sm">edit</button>
+                        <button type="button" class="btn btn-primary btn-sm">Delete</button> </td>
+            
                     </tr>
                 ))}
             </tbody>
