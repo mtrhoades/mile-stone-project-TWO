@@ -71,8 +71,8 @@ const StockList = () => {
                         <td>{stock.symbol}</td>
                         <td>{stock.name}</td>
                         <td>{stock.price}</td>
-                        <td> <button type="button" class="btn btn-primary btn-sm">edit</button>
-                        <button type="button" class="btn btn-primary btn-sm">Delete</button> </td>
+                        <td> <button type="button" class="btn btn-outline-success btn-sm">edit</button>
+                        <button type="button" class="btn btn-outline-danger btn-sm">Delete</button> </td>
             
                     </tr>
                 ))}
