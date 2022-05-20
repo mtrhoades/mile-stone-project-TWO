@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 // IMPORT COMPONENTS
-import DeleteStock from './DeleteStock';
+import UpdateStock from './UpdateStock';
 
 // FUNCTIONAL COMPONENT
 const StockList = () => {
@@ -58,6 +58,7 @@ const StockList = () => {
         <table class=" center table table-sm table-striped table-dark text-center">
             <thead>
                 <tr>
+                    <th scope="col">ID</th>
                     <th scope="col">Symbol</th>
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>  
@@ -72,12 +73,7 @@ const StockList = () => {
                         <td>{stock.stock_name}</td>
                         <td>{stock.price}</td>
                         <td>
-                          <button
-                            type="button"
-                            class="btn btn-outline-success btn-sm"
-                          >
-                            edit
-                          </button>
+                          <UpdateStock stock={stock} />
                           <button
                             onClick={() => deleteStock(stock.stock_id)}
                             type="button"

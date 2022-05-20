@@ -41,7 +41,7 @@ const AddNewStockModal = () => {
             body: JSON.stringify(body),
         });
 
-        console.log(response);
+        // console.log(response);
 
         window.location = '/';
         
