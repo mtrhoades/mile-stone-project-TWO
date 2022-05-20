@@ -1,6 +1,26 @@
 * {
   padding: 1em;
 }
-.btn{
-    margin: 2px;
+
+body {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,0.9051995798319328) 0%, rgba(94,26,136,1) 100%);
+}
+
+.btn {
+    margin: 5px;
+}
+
+h2 {
+  color: white;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#root .btn-success{
+  background-color: red;
 }

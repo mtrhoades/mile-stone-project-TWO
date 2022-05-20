@@ -1,8 +1,10 @@
 // IMPORTS
 import React, { useState, useEffect } from 'react';
 
+
 // IMPORT COMPONENTS
 import UpdateStock from './UpdateStock';
+
 
 // FUNCTIONAL COMPONENT
 const StockList = () => {
