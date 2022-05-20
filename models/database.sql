@@ -1,14 +1,14 @@
 CREATE DATABASE stocksapp;
 
 CREATE TABLE stocks(
-    stocks_id SERIAL PRIMARY KEY,
+    stock_id SERIAL PRIMARY KEY,
     symbol VARCHAR(255),
     stock_name VARCHAR(255),
     price MONEY
 );
 
 INSERT INTO stocks(
-    stocks_id, symbol, stock_name, price)
+    stock_id, symbol, stock_name, price)
     VALUES(
         1, 'AAPL', 'Apple', 240.45
     ), (
