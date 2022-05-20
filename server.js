@@ -1,5 +1,6 @@
 // DEPENDENCIES
 const express = require('express');
+const cors = require('cors');
 
 
 // CONFIGURATION
@@ -9,10 +10,12 @@ const app = express();
 
 
 // MIDDLEWARE (happens between req & res)
-app.set('views', __dirname + '/views'); // grabs the views folder files.
-app.use(express.static('public')); // access to public folder for css and images.
-app.set('view engine', 'jsx'); // to be able to look at the views .jsx pages
-app.engine('jsx', require('express-react-views').createEngine()); // importing 'express-react-views' to be able to use jsx
+app.use(cors());
+app.use(express.json());
+// app.set('views', __dirname + '/views'); // grabs the views folder files.
+// app.use(express.static('public')); // access to public folder for css and images.
+// app.set('view engine', 'jsx'); // to be able to look at the views .jsx pages
+// app.engine('jsx', require('express-react-views').createEngine()); // importing 'express-react-views' to be able to use jsx
 
 
 
@@ -31,10 +34,10 @@ const stocksController = require('./controllers/stocks_controller');
 app.use('/stocks', stocksController);
 
 
-// 404 PAGE (error page)
-app.get('*', (req, res) => {
-    res.render('error404')
-});
+// // 404 PAGE (error page)
+// app.get('*', (req, res) => {
+//     res.render('error404')
+// });
 
 
 // SERVER LISTEN

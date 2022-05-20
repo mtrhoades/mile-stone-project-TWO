@@ -1,59 +1,85 @@
 // DEPENDENCIES
 const express = require('express');
-const db = require('../models/stocks.js');
+const pool = require('../models/db');
 
 const stocks = express.Router();
 
 
 // ROUTES:
 
-    // INDEX (READ) ROUTE
+    // INDEX (READ) ROUTE - list of all stocks data from the database
 stocks.get('/', async (req, res) => {
     try {
-        res.json([
-            {
-             name: "Apple",
-             symbol: 'AAPL',
-             price: '$240.45'
-            },
-            {
-             name: "Amazon",
-             symbol: 'AMZN',
-             price: '$2,231.65'
-            },
-            {
-             name: "Twitter",
-             symbol: 'TWTR',
-             price: '$41.97'
-            },
-            {
-             name: "Microsoft",
-             symbol: 'MSFT',
-             price: '$352.85'
-            }
-        ])
+        const allStocks = await pool.query(
+            "SELECT * FROM stocks"
+        );
+        
+        res.json(allStocks.rows);
 
-        // use as template for when connecting to mongo:
-            // employee.get("/", async (req, res) => {
-            //     const myEmployees = await Employee.find();
-            //     res.json(myEmployees);
-            //     }); 
     } catch (err) {
-        res.status(404).render('error404');
+        res.status(404).send('Error 404 PAGE NOT FOUND!');
+    }
+});
+
+    // Read Route for a single stock to update or delete that one stock in particular
+stocks.get('/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const stock = await pool.query(
+            "SELECT * FROM stocks WHERE stock_id = $1",
+            [id]
+        );
+
+            res.json(stock.rows[0]);
+
+    } catch (err) {
+        res.status(404).send('Error 404 PAGE NOT FOUND!');
     }
 });
 
 
+    // CREATE ROUTE (add new stock)    
+stocks.post('/', async (req, res) => {
+    try {
+        const { symbol, stock_name, price } = req.body;
+        const newStock = await pool.query(
+            "INSERT INTO stocks(symbol, stock_name, price) VALUES($1, $2, $3) RETURNING *",
+            [symbol, stock_name, price]
+            );
 
-    // CREATE ROUTE (new stock)
+            res.json(newStock.rows[0]);
+
+    } catch (err) {
+        res.status(404).send('Error 404 PAGE NOT FOUND!');
+    }
+});
 
 
     // UPDATE ROUTE
-
+stocks.put('/', async (req, res) => {
+    try {
+        
+    } catch (err) {
+        res.status(404).send('Error 404 PAGE NOT FOUND!');
+    }
+});
 
 
     // DELETE ROUTE
+stocks.delete('/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const deleteStock = await pool.query(
+            "DELETE FROM stocks WHERE stock_id = $1",
+            [id]
+        );
 
+            res.json("Stock was DELETED!")
+
+    } catch (err) {
+        res.status(404).send('Error 404 PAGE NOT FOUND!');
+    }
+});
 
 
 module.exports = stocks;
