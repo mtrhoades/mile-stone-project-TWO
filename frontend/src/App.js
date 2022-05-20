@@ -1,7 +1,7 @@
 // IMPORTS
 import './App.css';
 import StockList from './components/StockList';
-import AddNewStock from './components/AddNewStock';
+import AddNewStockModal from './components/AddNewStockModal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -9,14 +9,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // FUNCTIONAL COMPONENT
 function App() {
   // VANILLA JS SECTION
-
+  document.body.style = 'background: lightblue';
 
 
   // JSX SECTION
   return (
     <div className="App">
 
-      <AddNewStock />
+      <AddNewStockModal />
 
       <StockList />
 
