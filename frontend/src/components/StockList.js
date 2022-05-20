@@ -1,9 +1,6 @@
 // IMPORTS
 import React, { useState, useEffect } from 'react';
 
-// IMPORT COMPONENTS
-import DeleteStock from './DeleteStock';
-
 // FUNCTIONAL COMPONENT
 const StockList = () => {
     // VANILLA JS SECTION
@@ -58,6 +55,7 @@ const StockList = () => {
         <table class=" center table table-sm table-striped table-dark text-center">
             <thead>
                 <tr>
+                    <th scope="col">ID</th>
                     <th scope="col">Symbol</th>
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>  
