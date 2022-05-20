@@ -53,35 +53,39 @@ const StockList = () => {
 
     // JSX SECTION
   return (
-    <div>
+    <div >
         <h2>Stock List</h2>
-        <table>
+        <table class=" center table table-sm table-striped table-dark text-center">
             <thead>
                 <tr>
-                    <th style={{paddingRight: '2rem'}} scope ="col">ID</th>
-                    <th style={{paddingRight: '1.5rem'}} scope="col">Symbol</th>
-                    <th style={{paddingRight: '3.5rem'}} scope="col">Name</th>
-                    <th style={{paddingRight: '4rem'}} scope="col">Price</th>
-                    <th style={{paddingRight: '2.5rem'}} scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>  
+                    <th scope="col">Options</th>  
                 </tr>
             </thead>
-            <tbody>
+            <tbody >
                 {stocks.map(stock => (
                     <tr key={stock.stock_id}>
                         <th scope="col">{stock.stock_id}</th>
                         <td>{stock.symbol}</td>
                         <td>{stock.stock_name}</td>
                         <td>{stock.price}</td>
-                        <td>Edit</td> {/* add edit component here */}
                         <td>
-                            <button
-                                className='btn btn-danger'
-                                onClick={() => deleteStock(stock.stock_id)}    
-                            >
-                                Delete
-                            </button>    
-                        </td> 
+                          <button
+                            type="button"
+                            class="btn btn-outline-success btn-sm"
+                          >
+                            edit
+                          </button>
+                          <button
+                            onClick={() => deleteStock(stock.stock_id)}
+                            type="button"
+                            class="btn btn-outline-danger btn-sm"
+                          >
+                            Delete
+                          </button>
+                        </td>
                     </tr>
                 ))}
             </tbody>
