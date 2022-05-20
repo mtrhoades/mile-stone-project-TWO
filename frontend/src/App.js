@@ -26,5 +26,3 @@ function App() {
 
 export default App;
 
-//testing a pull request, delete this
-//hello world

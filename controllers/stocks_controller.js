@@ -56,9 +56,18 @@ stocks.post('/', async (req, res) => {
 
 
     // UPDATE ROUTE
-stocks.put('/', async (req, res) => {
+stocks.put('/:id', async (req, res) => {
     try {
-        
+        const { id } = req.params;
+        const { symbol, stock_name, price} = req.body;
+        const updateStock = await pool.query(
+            "UPDATE stocks SET symbol = $1 WHERE stock_id = $2",
+            [symbol, id]
+        );
+
+            res.json('Stock was UPDATED!')
+            console.log(res.json())
+
     } catch (err) {
         res.status(404).send('Error 404 PAGE NOT FOUND!');
     }
