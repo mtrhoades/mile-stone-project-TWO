@@ -104,7 +104,7 @@ const AddNewStockModal = () => {
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="success" onClick={onSubmitForm}>
+          <Button variant="outline-success" onClick={onSubmitForm}>
             Add
           </Button>
         </Modal.Footer>
