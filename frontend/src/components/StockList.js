@@ -55,7 +55,20 @@ const StockList = () => {
 
     // JSX SECTION
   return (
+    
     <div >
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <h2>Stock List</h2>
         <table class=" center table table-sm table-striped table-dark text-center">
             <thead>
