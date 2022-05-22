@@ -56,24 +56,12 @@ const StockList = () => {
     // JSX SECTION
   return (
     
-    <div >
-        <div class="box">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+    <div>
         <h2>Stock List</h2>
-        <table class=" center table table-sm table-striped table-dark text-center">
+        <table class="center table table-sm table-striped table-dark text-center">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    {/* <th scope="col">ID</th> */}
                     <th scope="col">Symbol</th>
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>  
@@ -83,16 +71,16 @@ const StockList = () => {
             <tbody >
                 {stocks.map(stock => (
                     <tr key={stock.stock_id}>
-                        <th scope="col">{stock.stock_id}</th>
+                        {/* <th scope="col">{stock.stock_id}</th> */}
                         <td>{stock.symbol}</td>
                         <td>{stock.stock_name}</td>
                         <td>{stock.price}</td>
-                        <td>
+                        <td style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                           <UpdateStock stock={stock} />
                           <button
                             onClick={() => deleteStock(stock.stock_id)}
                             type="button"
-                            class="btn btn-outline-danger btn-sm"
+                            class="btn btn-outline-danger btn-sm options"
                           >
                             Delete
                           </button>
@@ -101,6 +89,18 @@ const StockList = () => {
                 ))}
             </tbody>
         </table>
+        <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
     </div>
   )
 }
