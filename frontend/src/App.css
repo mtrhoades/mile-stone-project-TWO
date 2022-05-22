@@ -23,6 +23,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
 }
+
 .modal{
   background: linear-gradient(90deg, rgba(2,0,36,0.9051995798319328) 0%, rgba(94,26,136,1) 100%);
   
@@ -130,4 +131,12 @@ button.btn-close {
 
 .box div {
   z-index: -1;
+}
+
+.dis {
+  font-weight: bold;
+  color: red;
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
 }

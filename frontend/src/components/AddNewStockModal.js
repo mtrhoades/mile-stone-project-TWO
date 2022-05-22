@@ -61,7 +61,7 @@ const AddNewStockModal = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title style={{color: 'green'}}>Add New Stock</Modal.Title>
+          <Modal.Title>Add New Stock</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form>

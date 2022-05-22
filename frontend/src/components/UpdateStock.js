@@ -67,7 +67,7 @@ const updateStock = async (e) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title style={{color: 'green'}}>Edit Stock</Modal.Title>
+          <Modal.Title>Edit Stock</Modal.Title>
         </Modal.Header>
             <div class="modal-body">
               <form>

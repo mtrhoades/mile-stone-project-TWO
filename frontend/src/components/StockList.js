@@ -68,7 +68,7 @@ const StockList = () => {
                     <th scope="col">Options</th>  
                 </tr>
             </thead>
-            <tbody >
+            <tbody class="listItems">
                 {stocks.map(stock => (
                     <tr key={stock.stock_id}>
                         {/* <th scope="col">{stock.stock_id}</th> */}
@@ -80,8 +80,7 @@ const StockList = () => {
                           <button
                             onClick={() => deleteStock(stock.stock_id)}
                             type="button"
-                            class="btn btn-outline-danger btn-sm options"
-                          >
+                            class="btn btn-outline-danger btn-sm options">
                             Delete
                           </button>
                         </td>
@@ -100,6 +99,13 @@ const StockList = () => {
         <div></div>
         <div></div>
         <div></div>
+        </div>
+        <div class="dis">
+            <p>
+                Disclaimer:
+                <br></br>This is just a project to show some fullstack development features.
+                <br></br>This should not be used as a way to trade stocks or as advise on trading.
+            </p>
         </div>
     </div>
   )
