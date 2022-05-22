@@ -55,10 +55,9 @@ const updateStock = async (e) => {
   return (
     <div>
 
-      {/* <!-- Button trigger modal --> */}
       <button
         type="button"
-        class="btn btn-outline-success btn-sm"
+        class="btn btn-outline-success btn-sm options"
         data-toggle="modal"
         data-target={`#id${stock.stock_id}`}
         onClick={handleShow}
@@ -66,20 +65,10 @@ const updateStock = async (e) => {
         Edit
       </button>
 
-      {/* <!-- Modal --> */}
-      <div class="modal fade" id={`id${stock.stock_id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 style={{color: 'green'}} class="modal-title" id="exampleModalLabel">Edit To-Do</h5>
-              <button
-                type="button"
-                class="btn-close"
-                aria-label="Close"
-                onClick={handleClose}
-              >
-              </button>
-            </div>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title style={{color: 'green'}}>Edit Stock</Modal.Title>
+        </Modal.Header>
             <div class="modal-body">
               <form>
                 <div class="form-group row">
@@ -130,9 +119,9 @@ const updateStock = async (e) => {
                       Edit
               </button>
             </div>
-          </div>
-        </div>
-      </div>
+      </Modal>
+
+
 
     </div>
   )
