@@ -119,3 +119,11 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
     opacity: 0;
   }
 }
+
+button.btn-close {
+  background-color: red;
+}
+
+.box div {
+  z-index: -1;
+}
