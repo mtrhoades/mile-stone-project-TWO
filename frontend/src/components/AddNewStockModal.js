@@ -60,7 +60,7 @@ const AddNewStockModal = () => {
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header closeButton class="btn-danger">
           <Modal.Title>Add New Stock</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -104,7 +104,7 @@ const AddNewStockModal = () => {
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="success" onClick={onSubmitForm}>
+          <Button variant="outline-success" onClick={onSubmitForm}>
             Add
           </Button>
         </Modal.Footer>
