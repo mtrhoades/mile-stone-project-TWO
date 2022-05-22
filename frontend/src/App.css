@@ -124,6 +124,10 @@ button.btn-close {
   background-color: red;
 }
 
+.options {
+  height: 30px;
+}
+
 .box div {
   z-index: -1;
 }
