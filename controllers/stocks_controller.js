@@ -59,10 +59,10 @@ stocks.post('/', async (req, res) => {
 stocks.put('/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const { symbol, stock_name, price} = req.body;
+        const { symbol, stock_name, price } = req.body;
         const updateStock = await pool.query(
-            "UPDATE stocks SET symbol = $1 WHERE stock_id = $2",
-            [symbol, id]
+            "UPDATE stocks SET symbol = $2, stock_name = $3, price = $4 WHERE stock_id = $1",
+            [id, symbol, stock_name, price]
         );
 
             res.json('Stock was UPDATED!')
