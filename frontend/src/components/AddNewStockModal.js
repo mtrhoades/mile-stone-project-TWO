@@ -1,5 +1,5 @@
 // IMPORTS
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
@@ -25,17 +25,14 @@ const AddNewStockModal = () => {
   const handleClose = () => setShow(false); // closing the modal
   const handleShow = () => setShow(true); // opening the modal
 
+    
   
-
-   // useEffect section:
-
-
-   // helper function section:
-   const onSubmitForm = async(e) => {
+  // helper function section:
+  const onSubmitForm = async(e) => {
     e.preventDefault();
     try {
-        const body = { symbol, stock_name, price };
-        const response = await fetch("http://localhost:3006/stocks", {
+      const body = { symbol, stock_name, price };
+      const response = await fetch("http://localhost:3006/stocks", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),
@@ -45,10 +42,38 @@ const AddNewStockModal = () => {
 
         window.location = '/';
         
-    } catch (err) {
+      } catch (err) {
         console.error(err.message)
-    }
-};
+      }
+    };
+    
+    
+    // polygon api fetch request:
+    const polygonApi = async () => {
+      try {
+        const response = await fetch(
+          `https://api.polygon.io/v1/open-close/AAPL/2020-10-14?adjusted=true&apiKey=KcdzRHM5pcd6apVHZ71g00TSMXc89CUh`
+          );
+          const jsonData = await response.json();
+          
+          console.log(response)
+
+          console.log(jsonData.close);
+          
+          setPrice(jsonData.close);
+          
+        } catch (err) {
+          console.error(err.message);
+        }
+      }
+      
+
+      
+      // useEffect section:
+      useEffect(() => {
+       polygonApi();
+    }, [])
+    
 
 
 
@@ -97,7 +122,7 @@ const AddNewStockModal = () => {
                 id="Price"
                 placeholder="Price"
                 value={ price }
-                onChange={e => setPrice(e.target.value)}
+                onChange={e => setPrice(polygonApi)}
               >
               </input>
             </div>  

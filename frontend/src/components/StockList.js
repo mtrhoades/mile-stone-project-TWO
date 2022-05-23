@@ -12,6 +12,8 @@ const StockList = () => {
     // useState section:
     const [stocks, setStocks] = useState([]);
 
+    const [price, setPrice] = useState([]);
+
 
    // helper function section:
    // fetch request:
@@ -45,6 +47,9 @@ const StockList = () => {
             console.error(err.message)
         }
     };
+
+
+ 
     
     
     // useEffect section:
