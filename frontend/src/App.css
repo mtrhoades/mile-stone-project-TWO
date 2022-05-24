@@ -140,3 +140,7 @@ button.btn-close {
   justify-content: center;
   margin-top: 200px;
 }
+
+p {
+  cursor:pointer;
+}

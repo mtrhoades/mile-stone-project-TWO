@@ -1,5 +1,5 @@
 // IMPORTS
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
@@ -15,7 +15,6 @@ const AddNewStockModal = () => {
    const [show, setShow] = useState(false); // for modal
 
 
-   // for new data being added:
    const [symbol, setSymbol] = useState('');
    const [stock_name, setStockName] = useState('');
    const [price, setPrice] = useState('');
@@ -25,30 +24,29 @@ const AddNewStockModal = () => {
   const handleClose = () => setShow(false); // closing the modal
   const handleShow = () => setShow(true); // opening the modal
 
+    
   
-
-   // useEffect section:
-
-
-   // helper function section:
-   const onSubmitForm = async(e) => {
+  // fetch request section:
+  const onSubmitForm = async(e) => {
     e.preventDefault();
     try {
-        const body = { symbol, stock_name, price };
-        const response = await fetch("http://localhost:3006/stocks", {
+      const body = { symbol, stock_name, price };
+      const response = await fetch("http://localhost:3006/stocks", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),
         });
 
-        // console.log(response);
+        console.log(response);
 
         window.location = '/';
-        
-    } catch (err) {
+
+
+      } catch (err) {
         console.error(err.message)
-    }
-};
+      }
+    };
+    
 
 
 

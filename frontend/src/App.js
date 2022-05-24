@@ -3,6 +3,7 @@ import './App.css';
 import StockList from './components/StockList';
 import AddNewStockModal from './components/AddNewStockModal';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import PolygonAPI from './components/polygonAPI/PolygonAPI';
 
 
 
@@ -18,6 +19,8 @@ function App() {
       <AddNewStockModal />
 
       <StockList />
+
+      <PolygonAPI />
 
     </div>
   );
