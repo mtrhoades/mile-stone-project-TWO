@@ -131,3 +131,7 @@ button.btn-close {
 .box div {
   z-index: -1;
 }
+
+p {
+  cursor:pointer;
+}

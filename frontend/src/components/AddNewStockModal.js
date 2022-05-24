@@ -15,7 +15,6 @@ const AddNewStockModal = () => {
    const [show, setShow] = useState(false); // for modal
 
 
-   // for new data being added:
    const [symbol, setSymbol] = useState('');
    const [stock_name, setStockName] = useState('');
    const [price, setPrice] = useState('');
@@ -27,7 +26,7 @@ const AddNewStockModal = () => {
 
     
   
-  // helper function section:
+  // fetch request section:
   const onSubmitForm = async(e) => {
     e.preventDefault();
     try {
@@ -38,41 +37,15 @@ const AddNewStockModal = () => {
             body: JSON.stringify(body),
         });
 
-        // console.log(response);
+        console.log(response);
 
         window.location = '/';
-        
+
+
       } catch (err) {
         console.error(err.message)
       }
     };
-    
-    
-    // polygon api fetch request:
-    const polygonApi = async () => {
-      try {
-        const response = await fetch(
-          `https://api.polygon.io/v1/open-close/AAPL/2020-10-14?adjusted=true&apiKey=KcdzRHM5pcd6apVHZ71g00TSMXc89CUh`
-          );
-          const jsonData = await response.json();
-          
-          console.log(response)
-
-          console.log(jsonData.close);
-          
-          setPrice(jsonData.close);
-          
-        } catch (err) {
-          console.error(err.message);
-        }
-      }
-      
-
-      
-      // useEffect section:
-      useEffect(() => {
-       polygonApi();
-    }, [])
     
 
 
@@ -122,7 +95,7 @@ const AddNewStockModal = () => {
                 id="Price"
                 placeholder="Price"
                 value={ price }
-                onChange={e => setPrice(polygonApi)}
+                onChange={e => setPrice(e.target.value)}
               >
               </input>
             </div>  
