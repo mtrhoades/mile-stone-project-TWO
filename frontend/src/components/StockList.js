@@ -12,6 +12,8 @@ const StockList = () => {
     // useState section:
     const [stocks, setStocks] = useState([]);
 
+    const [price, setPrice] = useState([]);
+
 
    // helper function section:
    // fetch request:
@@ -20,7 +22,7 @@ const StockList = () => {
          const response = await fetch('http://localhost:3006/stocks');
          const jsonData = await response.json();
 
-         console.log(jsonData);
+        //  console.log(jsonData);
          
             setStocks(jsonData);
            
@@ -45,6 +47,9 @@ const StockList = () => {
             console.error(err.message)
         }
     };
+
+
+ 
     
     
     // useEffect section:
@@ -71,7 +76,6 @@ const StockList = () => {
             <tbody >
                 {stocks.map(stock => (
                     <tr key={stock.stock_id}>
-                        {/* <th scope="col">{stock.stock_id}</th> */}
                         <td>{stock.symbol}</td>
                         <td>{stock.stock_name}</td>
                         <td>{stock.price}</td>
