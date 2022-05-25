@@ -92,7 +92,7 @@ const StockList = () => {
                 ))}
             </tbody>
         </table>
-        <div class="box">
+        <div class="box"> {/* background */}
         <div></div>
         <div></div>
         <div></div>
