@@ -53,9 +53,13 @@ const PolygonAPI = () => {
   return (
     <div style={{color: 'white'}} className="stock-app">
         <div className="stock-search">
-            <h3>Search a Stock from API</h3>
+            <h3 style={{padding: "0"}}>Search a Stock from API</h3>
+            <h6 style={{padding: "0"}}>*Search by company's Ticker</h6>
             <form>
                 <input type='text' placeholder='Search' onChange={handleChange}></input>
+                <select>
+                    <option value="selectStock"></option>
+                </select>
             </form>
             {/* <button
                 type='search'
@@ -66,14 +70,17 @@ const PolygonAPI = () => {
             </button> */}
         </div>
         {filteredStocks.map(stock => {
+
             return (
                 <Stocks key={stock.T} symbol={stock.T} price={stock.c}/>
-            )
+                )
         })}
 
     </div>
+    
   )
 }
+
 
 
 export default PolygonAPI;
