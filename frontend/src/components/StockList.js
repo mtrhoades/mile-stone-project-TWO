@@ -104,13 +104,6 @@ const StockList = () => {
         <div></div>
         <div></div>
         </div>
-        <div class="dis">
-            <p>
-                Disclaimer:
-                <br></br>This is just a project to show some fullstack development features.
-                <br></br>This should not be used as a way to trade stocks or as advise on trading.
-            </p>
-        </div>
     </div>
   )
 }

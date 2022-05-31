@@ -1,6 +1,7 @@
 // IMPORTS
 import React, { useState, useEffect } from 'react';
 import Stocks from './Stocks';
+// import SearchBar from './SearchBar';
 
 
 // FUNCTIONAL COMPONENT
@@ -11,8 +12,31 @@ const PolygonAPI = () => {
     const [stocks, setStocks] = useState([]);
     const [search, setSearch] = useState('');
 
+    const [symbol, setSymbol] = useState('');
+    // const [stock_name, setStockName] = useState('');
+    const [price, setPrice] = useState('');
+ 
 
+
+    const onSubmitForm = async(e) => {
+        e.preventDefault();
+        try {
+          const body = { symbol, price };
+          const response = await fetch("http://localhost:3006/stocks", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body),
+            });
     
+            console.log(response);
+                        
+            window.location = '/';
+    
+          } catch (err) {
+            console.error(err.message)
+          }
+        };    
+
     
 // HELPER FUNCTION SECTION
     // polygon api fetch request:
@@ -46,36 +70,35 @@ const PolygonAPI = () => {
         setSearch(e.target.value)
     }
 
-    const filteredStocks = stocks.filter(stock => stock.T.toLowerCase().includes(search.toLowerCase()))
+    // const filteredStocks = stocks.filter(stock => stock.T.toLowerCase().includes(search.toLowerCase()))
 
 
 // JSX SECTION
   return (
     <div style={{color: 'white'}} className="stock-app">
-        <div className="stock-search">
-            <h3 style={{padding: "0"}}>Search a Stock from API</h3>
-            <h6 style={{padding: "0"}}>*Search by company's Ticker</h6>
-            <form>
-                <input type='text' placeholder='Search' onChange={handleChange}></input>
-                <select>
-                    <option value="selectStock"></option>
-                </select>
-            </form>
-            {/* <button
-                type='search'
-                class="btn btn-outline-primary"
-                onClick={() => polygonApi()}
-            >
-                Search
-            </button> */}
+        <h3>Search a Stock from API</h3>
+        <div className="search">
+        <div style={{display: 'flex'}} className="searchInput">
+            <input type="text" placeholder='Enter Stock Symbol Here...'></input>
+            <div className="searchButton">
+                <input className="btn btn-primary" type="button" value="Search"></input>
+            </div>
         </div>
-        {filteredStocks.map(stock => {
-
-            return (
-                <Stocks key={stock.T} symbol={stock.T} price={stock.c}/>
+        <div className="dataResult">
+            {stocks.map(stock => {
+                return (
+                    <ul style={{display: 'flex'}} key={stock.T} symbol={stock.T} price={stock.c}>
+                        <li onClick={onSubmitForm}>
+                            {stock.T}
+                        </li>
+                        <li>
+                            ${stock.c}
+                        </li>
+                    </ul>
                 )
-        })}
-
+            })}
+        </div>
+        </div>
     </div>
     
   )

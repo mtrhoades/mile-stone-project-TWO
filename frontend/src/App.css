@@ -133,14 +133,18 @@ button.btn-close {
   z-index: -1;
 }
 
-.dis {
-  font-weight: bold;
-  color: red;
-  display: flex;
-  justify-content: center;
-  margin-top: 200px;
+.dataResult {
+  margin-top: 5px;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
-p {
+li {
+  list-style-type: none;
   cursor:pointer;
 }

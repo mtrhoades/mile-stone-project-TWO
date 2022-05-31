@@ -24,15 +24,12 @@ const Stocks = ({ symbol, price }) => {
 
 
   return (
-    <div className="stock-container">
-        
-        <div style={{display: 'flex'}} className="stock-row" >
+    <div style={{color: 'black'}} className="stock-container">
+        <div style={{display: 'flex', padding: '0'}} className="stock-row">
             <div className="stock">
-                {/* <h5>Ticker Symbol</h5> */}
                 <p className="stock-symbol" onClick={onSubmitForm}>{symbol}</p>
             </div>
             <div className="stock-data">
-                {/* <h5>Closing Price (05/23/2022)</h5> */}
                 <p className="stock-price" onClick={onSubmitForm}>${price}</p>
             </div>
         </div>
