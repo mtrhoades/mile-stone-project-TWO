@@ -1,8 +1,6 @@
 // IMPORTS
 import React, { useState, useEffect } from 'react';
 import Stocks from './Stocks';
-// import SearchBar from './SearchBar';
-
 
 // FUNCTIONAL COMPONENT
 const PolygonAPI = () => {
@@ -10,32 +8,7 @@ const PolygonAPI = () => {
 
     // useState section
     const [stocks, setStocks] = useState([]);
-    const [search, setSearch] = useState('');
-
-    const [symbol, setSymbol] = useState('');
-    // const [stock_name, setStockName] = useState('');
-    const [price, setPrice] = useState('');
- 
-
-
-    const onSubmitForm = async(e) => {
-        e.preventDefault();
-        try {
-          const body = { symbol, price };
-          const response = await fetch("http://localhost:3006/stocks", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(body),
-            });
-    
-            console.log(response);
-                        
-            window.location = '/';
-    
-          } catch (err) {
-            console.error(err.message)
-          }
-        };    
+    // const [search, setSearch] = useState('');
 
     
 // HELPER FUNCTION SECTION
@@ -65,45 +38,35 @@ const PolygonAPI = () => {
     }, [])
 
 
+
     // helper function
-    const handleChange = (e) => {
-        setSearch(e.target.value)
-    }
+    // const handleChange = (e) => {
+    //     setSearch(e.target.value)
+    // }
 
     // const filteredStocks = stocks.filter(stock => stock.T.toLowerCase().includes(search.toLowerCase()))
 
 
 // JSX SECTION
   return (
-    <div style={{color: 'white'}} className="stock-app">
+    <div style={{color: 'white', display: 'flex', flexDirection: 'column'}} className="stock-app">
         <h3>Search a Stock from API</h3>
-        <div className="search">
-        <div style={{display: 'flex'}} className="searchInput">
-            <input type="text" placeholder='Enter Stock Symbol Here...'></input>
-            <div className="searchButton">
-                <input className="btn btn-primary" type="button" value="Search"></input>
+            <div className="searchInput">
+                <input type="text" placeholder='Enter Stock Symbol Here...'></input>
             </div>
-        </div>
-        <div className="dataResult">
-            {stocks.map(stock => {
-                return (
-                    <ul style={{display: 'flex'}} key={stock.T} symbol={stock.T} price={stock.c}>
-                        <li onClick={onSubmitForm}>
-                            {stock.T}
-                        </li>
-                        <li>
-                            ${stock.c}
-                        </li>
-                    </ul>
-                )
-            })}
-        </div>
-        </div>
+            <div style={{display: 'flex', alignItems: 'flex-end'}} className='resultBoxPlusDisclaimer'>
+                <div className="dataResult">
+                    {stocks.map(stock => {
+                        return (
+                            <Stocks key={stock.T} symbol={stock.T} price={stock.c} />
+                        )
+                    })}
+                </div>
+            </div>
     </div>
     
   )
 }
-
 
 
 export default PolygonAPI;
