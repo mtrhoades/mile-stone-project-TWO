@@ -4,7 +4,7 @@ const Pool = require('pg').Pool; // dependency to use postgres(pg) module that h
 
 const pool = new Pool ({
     user: 'postgres',
-    password: 'Ruckus179',
+    password: '',//enter passwrd here for postgres
     host: 'localhost',
     port: 5432,
     database: 'stocksapp'
