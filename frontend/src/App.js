@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import StockList from './components/StockList';
 import AddNewStockModal from './components/AddNewStockModal';
 import PolygonAPI from './components/polygonAPI/PolygonAPI';
+import CoinGeckoAPI from './components/coinGeckoAPI/CoinGeckoAPI';
 
 
 
@@ -26,7 +27,10 @@ function App() {
 
       <StockList />
 
-      <PolygonAPI />
+      <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+        <PolygonAPI />
+        <CoinGeckoAPI />        
+      </div>
 
     </div>
   );

@@ -41,10 +41,10 @@ stocks.get('/:id', async (req, res) => {
     // CREATE ROUTE (add new stock) - POST route   
 stocks.post('/', async (req, res) => {
     try {
-        const { symbol, stock_name, price } = req.body; // destrucure symbol, stock_name, price to show what can be created as the body of the request and added as data.
+        const { symbol, name, price } = req.body; // destrucure symbol, stock_name, price to show what can be created as the body of the request and added as data.
         const newStock = await pool.query(
-            "INSERT INTO stocks(symbol, stock_name, price) VALUES($1, $2, $3) RETURNING *",
-            [symbol, stock_name, price] // using 3 parameters where $1, $2, $3 each match up to each parameter
+            "INSERT INTO stocks(symbol, name, price) VALUES($1, $2, $3) RETURNING *",
+            [symbol, name, price] // using 3 parameters where $1, $2, $3 each match up to each parameter
             );
 
             res.json(newStock.rows[0]); // response to return the created stock row (first one in the array since there is only one being created at a time.)
@@ -59,10 +59,10 @@ stocks.post('/', async (req, res) => {
 stocks.put('/:id', async (req, res) => {
     try {
         const { id } = req.params; // destructuring id to be the parameter of the request because we are grabbing one by their id to update.
-        const { symbol, stock_name, price } = req.body; // same as the above (create route), to create the body (that be changed/updated) from destructuring the symbol, stock_name, and price.
+        const { symbol, name, price } = req.body; // same as the above (create route), to create the body (that be changed/updated) from destructuring the symbol, stock_name, and price.
         const updateStock = await pool.query(
-            "UPDATE stocks SET symbol = $2, stock_name = $3, price = $4 WHERE stock_id = $1",
-            [id, symbol, stock_name, price] // update query finds the stock to update by the id ($1/ 1st parameter) and sets the data being changed whether it is the symbol, stock_name, and/or price ($2, $3, $4/ 2nd, 3rd, and 4th parameters).
+            "UPDATE stocks SET symbol = $2, name = $3, price = $4 WHERE stock_id = $1",
+            [id, symbol, name, price] // update query finds the stock to update by the id ($1/ 1st parameter) and sets the data being changed whether it is the symbol, stock_name, and/or price ($2, $3, $4/ 2nd, 3rd, and 4th parameters).
         );
 
             res.json('Stock was UPDATED!') // returns response of json that logs in the terminal ('Stock was UPDATED!').

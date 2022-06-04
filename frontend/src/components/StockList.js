@@ -69,7 +69,7 @@ const StockList = () => {
                 {stocks.map(stock => (
                     <tr key={stock.stock_id}>
                         <td>{stock.symbol}</td>
-                        <td>{stock.stock_name}</td>
+                        <td>{stock.name}</td>
                         <td>{stock.price}</td>
                         <td style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                           <UpdateStock stock={stock} />
@@ -85,7 +85,9 @@ const StockList = () => {
             </tbody>
         </table>
         <div class="box"> {/* animation background */}
-            <div></div>
+            <div>
+                {/* <img src="/home/matthew/Desktop/coding/UNLV/Full_Course/mile-stone-projects/mile-stone-project-TWO/frontend/public/bitcoin-910307_640.png" alt="bitcoin-logo"></img> */}
+            </div>
             <div></div>
             <div></div>
             <div></div>

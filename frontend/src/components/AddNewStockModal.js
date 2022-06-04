@@ -12,7 +12,7 @@ const AddNewStockModal = () => {
 
     // data to add useState section
    const [symbol, setSymbol] = useState('');
-   const [stock_name, setStockName] = useState('');
+   const [name, setName] = useState('');
    const [price, setPrice] = useState('');
 
 
@@ -25,7 +25,7 @@ const AddNewStockModal = () => {
   const onSubmitForm = async(e) => {
     e.preventDefault();
     try {
-      const body = { symbol, stock_name, price };
+      const body = { symbol, name, price };
       const response = await fetch("http://localhost:3006/stocks", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -53,7 +53,7 @@ const AddNewStockModal = () => {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header 
           closeButton>
-          <Modal.Title>Add New Stock</Modal.Title>
+          <Modal.Title style={{color: 'white'}}>Add New Stock</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form>
@@ -76,8 +76,8 @@ const AddNewStockModal = () => {
                 class="form-control form-control-sm"
                 id="Name"
                 placeholder="Enter Stock Company Name Here..."
-                value={ stock_name }
-                onChange={e => setStockName(e.target.value)}
+                value={ name }
+                onChange={e => setName(e.target.value)}
               >
               </input>
             </div>

@@ -120,7 +120,7 @@ button.btn-close {
 
 .dataResult {
   margin-top: 5px;
-  width: 267.25px;
+  width: 350px;
   height: 200px;
   background-color: white;
   color: black;
@@ -131,4 +131,8 @@ button.btn-close {
 
 p {
   cursor:pointer;
+}
+
+.searchInput input {
+  width: 350px;
 }

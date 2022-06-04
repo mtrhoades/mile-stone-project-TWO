@@ -32,6 +32,7 @@ const PolygonAPI = () => {
     }
 
 
+
 // useEffect section
     useEffect(() => {
     polygonApi();
