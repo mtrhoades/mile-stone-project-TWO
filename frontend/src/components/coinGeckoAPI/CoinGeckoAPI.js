@@ -44,7 +44,11 @@ const CoinGeckoAPI = () => {
         const newFilter = coins.filter((coin) => {
             return coin.name.toLowerCase().includes(searchWord.toLowerCase());
         });
+        if (searchWord === "") {
+            setFilteredData([])
+        } else {
         setFilteredData(newFilter);
+        }
     }
 
 
