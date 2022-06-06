@@ -45,13 +45,15 @@ const CoinGeckoAPI = () => {
 
         <h3 style={{color: 'white'}}>Search a CryptoCurrency from API</h3>
         <div className="searchInput">
-            <input type="text" placeholder='Enter Coin Symbol Here...'></input>
+            <input type="text" placeholder='Enter Coin Name Here...'></input>
         </div>
-        <div style={{display: 'flex', alignItems: 'flex-end'}} className='resultBoxPlusDisclaimer'>
+        <div className='resultBoxPlusDisclaimer'>
             <div className="dataResult">
                 {coins.map(coin => {
                     return (
-                        <Coins key={coin.id} symbol={coin.symbol} price={coin.current_price} name={coin.name} />
+                        <Coins key={coin.id} symbol={coin.symbol} price={coin.current_price} name={coin.name}
+                        image={coin.image}
+                        />
                     )
                 })}
             </div>

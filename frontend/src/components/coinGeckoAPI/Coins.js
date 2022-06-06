@@ -2,7 +2,7 @@
 import React from 'react';
 
 // FUNCTIONAL COMPONENT
-const Coins = ( { symbol, name, price } ) => {
+const Coins = ( { symbol, name, price, image } ) => {
     // VANILLA JS SECTION
 
     // helper function (add to table when onClick)
@@ -28,7 +28,10 @@ const Coins = ( { symbol, name, price } ) => {
   return (
     <div className="coin-container">
 
-        <div style={{display: 'flex', justifyContent: 'space-evenly'}} className="coin-row" >
+        <div style={{display: 'flex', justifyContent: 'space-between', backgroundColor: '#414345', color: 'white'}} className="coin-row" >
+          <div className="coinImage">
+            <img className="coin-image" src={image}></img>
+          </div>
           <div className="coinSymbol">
             <p className="coin-symbol" onClick={onSubmitForm}>{symbol}</p>
           </div>

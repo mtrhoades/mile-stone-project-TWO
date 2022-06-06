@@ -59,8 +59,8 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
   animation: animate 7s linear infinite;
 }
 .box div:nth-child(3){
-  top: 17%;
-  left: 50%;
+  bottom: -25%;
+  left: 5%;
   animation: animate 9s linear infinite;
 }
 .box div:nth-child(4){
@@ -89,8 +89,8 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
   animation: animate 16s linear infinite;
 }
 .box div:nth-child(9){
-  top: 100%;
-  left: 25%;
+  top: 20%;
+  left: 50%;
   animation: animate 14s linear infinite;
 }
 .box div:nth-child(10){
@@ -111,11 +111,6 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
 .box div:nth-child(13){
   bottom: -35%;
   right: 40%;
-  animation: animate 11s linear infinite;
-}
-.box div:nth-child(14){
-  bottom: -25%;
-  right: 10%;
   animation: animate 11s linear infinite;
 }
 
@@ -141,9 +136,9 @@ button.btn-close {
 
 .dataResult {
   margin-top: 5px;
-  width: 350px;
-  height: 200px;
-  background-color: white;
+  width: 500px;
+  height: 325px;
+  background-color: #232526;
   color: black;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
@@ -155,5 +150,10 @@ p {
 }
 
 .searchInput input {
-  width: 350px;
+  width: 500px;
+}
+
+.coin-image {
+  width: 50px;
+  height: 50px;
 }

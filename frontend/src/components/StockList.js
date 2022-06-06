@@ -96,16 +96,14 @@ const StockList = () => {
             <div></div>
             <div></div>
             <div></div>
-            <div>
-                {/* <img src={btcImage} alt="bitcoin-logo"></img> */}
-            </div>
+            <div></div>
             <div></div>
             <div></div>
             <div>
                 <img src={btcImage} alt="bitcoin-logo"></img>
             </div>
             <div></div>
-            <div></div>
+            {/* <div></div> */}
         </div>
     </div>
   )
