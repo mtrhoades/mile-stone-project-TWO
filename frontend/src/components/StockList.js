@@ -1,5 +1,6 @@
 // IMPORTS
 import React, { useState, useEffect } from 'react';
+import btcImage from '/home/matthew/Desktop/coding/UNLV/Full_Course/mile-stone-projects/mile-stone-project-TWO/frontend/src/images/btcImage.png'
 
 // IMPORT COMPONENTS
 import UpdateStock from './UpdateStock';
@@ -86,7 +87,7 @@ const StockList = () => {
         </table>
         <div class="box"> {/* animation background */}
             <div>
-                {/* <img src="/home/matthew/Desktop/coding/UNLV/Full_Course/mile-stone-projects/mile-stone-project-TWO/frontend/public/bitcoin-910307_640.png" alt="bitcoin-logo"></img> */}
+                <img src={btcImage} alt="bitcoin-logo"></img>
             </div>
             <div></div>
             <div></div>
@@ -95,6 +96,14 @@ const StockList = () => {
             <div></div>
             <div></div>
             <div></div>
+            <div>
+                {/* <img src={btcImage} alt="bitcoin-logo"></img> */}
+            </div>
+            <div></div>
+            <div></div>
+            <div>
+                <img src={btcImage} alt="bitcoin-logo"></img>
+            </div>
             <div></div>
             <div></div>
         </div>

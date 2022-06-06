@@ -27,8 +27,8 @@ function App() {
 
       <StockList />
 
-      <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-        <PolygonAPI />
+      <div style={{display: 'flex', justifyContent: 'flex-start'}}>
+        {/* <PolygonAPI /> */}
         <CoinGeckoAPI />        
       </div>
 
