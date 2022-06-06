@@ -22,15 +22,15 @@ function App() {
           This should not be used as a way to trade stocks or as advice on trading.</p>
       </div>
 
-
-      <AddNewStockModal />
-
-      <StockList />
-
       <div style={{display: 'flex', justifyContent: 'center'}}>
         {/* <PolygonAPI /> */}
         <CoinGeckoAPI />        
       </div>
+
+      {/* <AddNewStockModal /> */}
+
+      <StockList />
+
 
     </div>
   );

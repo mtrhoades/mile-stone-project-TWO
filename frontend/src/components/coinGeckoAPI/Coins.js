@@ -28,7 +28,7 @@ const Coins = ( { symbol, name, price, image } ) => {
   return (
     <div className="coin-container">
 
-        <div style={{display: 'flex', justifyContent: 'space-between', backgroundColor: '#414345', color: 'white'}} className="coin-row" >
+        <div style={{display: 'flex', justifyContent: 'space-between', backgroundColor: 'lightgrey', color: 'black'}} className="coin-row" >
           <div className="coinImage">
             <img className="coin-image" src={image}></img>
           </div>

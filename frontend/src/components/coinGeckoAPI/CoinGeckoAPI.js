@@ -9,6 +9,7 @@ const CoinGeckoAPI = () => {
 
         // useState section:
     const [coins, setCoins] = useState([]);
+    const [filteredData, setFilteredData] = useState([]);
 
 
     // helper function section:
@@ -37,6 +38,14 @@ const CoinGeckoAPI = () => {
         coinGeckoApi()
     },[])
 
+    // filterd data function for search input
+    const handleFilter = (e) => {
+        const searchWord = e.target.value
+        const newFilter = coins.filter((coin) => {
+            return coin.name.toLowerCase().includes(searchWord.toLowerCase());
+        });
+        setFilteredData(newFilter);
+    }
 
 
     // JSX SECTION
@@ -45,11 +54,12 @@ const CoinGeckoAPI = () => {
 
         <h3 style={{color: 'white'}}>Search a CryptoCurrency from API</h3>
         <div className="searchInput">
-            <input type="text" placeholder='Enter Coin Name Here...'></input>
+            <input type="text" placeholder='Enter Coin Name Here...' onChange={handleFilter}></input>
         </div>
         <div className='resultBoxPlusDisclaimer'>
+            {filteredData.length != 0 && (
             <div className="dataResult">
-                {coins.map(coin => {
+                {filteredData.map(coin => {
                     return (
                         <Coins key={coin.id} symbol={coin.symbol} price={coin.current_price} name={coin.name}
                         image={coin.image}
@@ -57,6 +67,7 @@ const CoinGeckoAPI = () => {
                     )
                 })}
             </div>
+            )}
         </div>
 
     </div>

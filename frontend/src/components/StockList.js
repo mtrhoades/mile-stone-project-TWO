@@ -56,7 +56,7 @@ const StockList = () => {
   return (
     
     <div>
-        <h2 style={{color: 'white'}}>Stock List</h2>
+        <h2 style={{color: 'white'}}>Stocks/Coin List</h2>
         <table class="center table table-sm table-striped table-dark text-center">
             <thead>
                 <tr>
