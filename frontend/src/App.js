@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import StockList from './components/StockList';
 import AddNewStockModal from './components/AddNewStockModal';
 import PolygonAPI from './components/polygonAPI/PolygonAPI';
+import CoinGeckoAPI from './components/coinGeckoAPI/CoinGeckoAPI';
 
 
 
@@ -21,12 +22,15 @@ function App() {
           This should not be used as a way to trade stocks or as advice on trading.</p>
       </div>
 
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        {/* <PolygonAPI /> */}
+        <CoinGeckoAPI />        
+      </div>
 
-      <AddNewStockModal />
+      {/* <AddNewStockModal /> */}
 
       <StockList />
 
-      <PolygonAPI />
 
     </div>
   );

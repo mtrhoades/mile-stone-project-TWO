@@ -8,7 +8,6 @@ const PolygonAPI = () => {
 
     // useState section
     const [stocks, setStocks] = useState([]);
-    // const [search, setSearch] = useState('');
 
     
 // HELPER FUNCTION SECTION
@@ -30,6 +29,7 @@ const PolygonAPI = () => {
             console.error(err.message);
         }
     }
+
 
 
 // useEffect section

@@ -49,18 +49,18 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
 }
 
 .box div:nth-child(1){
-  top: 12%;
+  top: 0%;
   left: 42%;
-  animation: animate 10s linear infinite;
+  animation: animate 12s linear infinite;
 }
 .box div:nth-child(2){
   top: 70%;
-  left: 50%;
+  right: 20%;
   animation: animate 7s linear infinite;
 }
 .box div:nth-child(3){
-  top: 17%;
-  left: 50%;
+  bottom: -25%;
+  left: 5%;
   animation: animate 9s linear infinite;
 }
 .box div:nth-child(4){
@@ -89,15 +89,31 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
   animation: animate 16s linear infinite;
 }
 .box div:nth-child(9){
-  top: 90%;
-  left: 25%;
-  animation: animate 9s linear infinite;
+  top: 20%;
+  left: 50%;
+  animation: animate 14s linear infinite;
 }
 .box div:nth-child(10){
   top: 20%;
   left: 80%;
   animation: animate 10s linear infinite;
 }
+.box div:nth-child(11){
+  bottom: 0%;
+  right: 20%;
+  animation: animate 11s linear infinite;
+}
+.box div:nth-child(12){
+  bottom: -5%;
+  left: 40%;
+  animation: animate 12s linear infinite;
+}
+.box div:nth-child(13){
+  bottom: -35%;
+  right: 40%;
+  animation: animate 11s linear infinite;
+}
+
 
 @keyframes animate{
   0%{
@@ -120,8 +136,8 @@ button.btn-close {
 
 .dataResult {
   margin-top: 5px;
-  width: 267.25px;
-  height: 200px;
+  width: 500px;
+  height: 325px;
   background-color: white;
   color: black;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -131,4 +147,13 @@ button.btn-close {
 
 p {
   cursor:pointer;
+}
+
+.searchInput input {
+  width: 500px;
+}
+
+.coin-image {
+  width: 50px;
+  height: 50px;
 }

@@ -1,5 +1,6 @@
 // IMPORTS
 import React, { useState, useEffect } from 'react';
+import btcImage from '/home/matthew/Desktop/coding/UNLV/Full_Course/mile-stone-projects/mile-stone-project-TWO/frontend/src/images/btcImage.png'
 
 // IMPORT COMPONENTS
 import UpdateStock from './UpdateStock';
@@ -55,7 +56,7 @@ const StockList = () => {
   return (
     
     <div>
-        <h2 style={{color: 'white'}}>Stock List</h2>
+        <h2 style={{color: 'white'}}>Stocks/Coin List</h2>
         <table class="center table table-sm table-striped table-dark text-center">
             <thead>
                 <tr>
@@ -69,7 +70,7 @@ const StockList = () => {
                 {stocks.map(stock => (
                     <tr key={stock.stock_id}>
                         <td>{stock.symbol}</td>
-                        <td>{stock.stock_name}</td>
+                        <td>{stock.name}</td>
                         <td>{stock.price}</td>
                         <td style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                           <UpdateStock stock={stock} />
@@ -85,6 +86,9 @@ const StockList = () => {
             </tbody>
         </table>
         <div class="box"> {/* animation background */}
+            <div>
+                <img src={btcImage} alt="bitcoin-logo"></img>
+            </div>
             <div></div>
             <div></div>
             <div></div>
@@ -95,6 +99,11 @@ const StockList = () => {
             <div></div>
             <div></div>
             <div></div>
+            <div>
+                <img src={btcImage} alt="bitcoin-logo"></img>
+            </div>
+            <div></div>
+            {/* <div></div> */}
         </div>
     </div>
   )
